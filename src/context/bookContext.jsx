@@ -172,6 +172,7 @@ export const BookProvider = ({children}) =>{
   const [state,dispatch] = useReducer (bookReducer,initialState);
 
   return(
+    <>
     <BookContext.Provider 
     value={{
       books:state.books,
@@ -179,9 +180,10 @@ export const BookProvider = ({children}) =>{
       shelves:state.shelves,
       bookDispatch:dispatch,
     }}
-    >
-      {children}
+    >{children}
     </BookContext.Provider>
+    </>
+    
   )
 
 
